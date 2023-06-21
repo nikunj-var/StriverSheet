@@ -1,18 +1,19 @@
-
-
-void moveZeroes(int *nums, int numsSize)
-{
-    int i = 0, j = 0;
-    int temp;
-    while (i < numsSize)
-    {
-        if (nums[i] != 0)
-        {
-            temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-            j++;
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+class Solution {
+public:
+    void moveZeroes(vector<int>& arr) {
+        int n=arr.size();
+        int left = 0;
+        int right = 0;
+        while(right < n){
+            if(arr[right] != 0){
+               swap(arr[left],arr[right]); 
+                left++;
+            }
+            right++;
         }
-        i++;
     }
-}
+};
